@@ -4,6 +4,7 @@ const computerScoreText = document.getElementById("computer-score");
 const description = document.getElementById("description");
 const btnContainer = document.querySelector(".btn");
 const yourChoiceText = document.querySelector("h2");
+const playAgain = document.getElementById("play-again");
 let playerScore = 0;
 let computerScore = 0;
 let totalRound = 1;
@@ -36,6 +37,7 @@ function playRound (humanChoice) {
     else {
         btnContainer.style.display = "none";
         yourChoiceText.style.display = "none";
+        playAgain.style.display = "block";
         if (playerScore > computerScore) {
             description.textContent = `YOU WIN!! Your score is ${playerScore} and the computer score is ${computerScore}`;
         } else if (playerScore < computerScore) {
@@ -50,4 +52,16 @@ playerChoiceBtn.forEach(btn => {
     btn.addEventListener("click", () => {
         playRound(btn.value);
     })
+})
+
+playAgain.addEventListener("click", () => {
+    btnContainer.style.display = "flex";
+    yourChoiceText.style.display = "block";
+    playAgain.style.display = "none";
+    description.textContent = "";
+    playerScoreText.textContent = "0";
+    computerScoreText.textContent = "0";
+    playerScore = 0;
+    computerScore = 0;
+    totalRound = 1;
 })
