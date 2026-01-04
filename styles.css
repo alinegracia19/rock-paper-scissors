@@ -43,6 +43,13 @@ button {
     background-color: #BDE8F5;
     cursor: pointer;
     margin: 1em 0;
+    font-weight: bold;
+}
+
+#play-again {
+    display: none;
+    width: 150px;
+    margin: 0 auto;
 }
 
 p {
