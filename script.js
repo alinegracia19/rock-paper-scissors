@@ -7,7 +7,7 @@ const yourChoiceText = document.querySelector("h2");
 const playAgain = document.getElementById("play-again");
 let playerScore = 0;
 let computerScore = 0;
-let totalRound = 1;
+let totalRound = 0;
 
 const choices = ["rock", "paper", "scissors"];
 
@@ -17,7 +17,7 @@ function getComputerChoice () {
 
 function playRound (humanChoice) {
     const computerChoice = getComputerChoice();
-    if (totalRound < 5) {
+
         if (humanChoice === computerChoice) {
         playerScore++;
         computerScore++;
@@ -28,13 +28,13 @@ function playRound (humanChoice) {
     } else {
         computerScore++;
         description.textContent = `Computer Win!! The computer chose ${computerChoice} and you chose ${humanChoice}`;
-        
     }
     totalRound++;
     playerScoreText.textContent = playerScore;
     computerScoreText.textContent = computerScore;
-    }
-    else {
+
+
+    if (totalRound === 5) {
         btnContainer.style.display = "none";
         yourChoiceText.style.display = "none";
         playAgain.style.display = "block";
@@ -63,5 +63,5 @@ playAgain.addEventListener("click", () => {
     computerScoreText.textContent = "0";
     playerScore = 0;
     computerScore = 0;
-    totalRound = 1;
+    totalRound = 0;
 })
