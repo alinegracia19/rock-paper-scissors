@@ -49,10 +49,20 @@ button {
 #play-again {
     display: none;
     width: 150px;
-    margin: 0 auto;
+    margin: 0 auto 2.5em auto;
 }
 
 p {
     font-size: 1.3rem;
     margin: 0.7em;
+}
+
+#description {
+    font-size: 1.5rem;
+    margin-top: 2em;
+    font-weight: bold;
+    background-color: #BDE8F5;
+    color: #0F2854;
+    padding: 1em;
+    border-radius: 15px;
 }
